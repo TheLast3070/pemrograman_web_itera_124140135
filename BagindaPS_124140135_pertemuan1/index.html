@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini POS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mini POS</h1>
+        <p class="subtitle">Aplikasi Kasir Sederhana</p>
+        <section class="form-section">
+            <h2>Tambah Barang</h2>
+            <form id="formBarang">
+                <div class="form-group">
+                    <label for="namaBarang">Nama Barang</label>
+                    <input 
+                        type="text" 
+                        id="namaBarang" 
+                        placeholder="Masukkan nama barang"
+                    >
+                    <small id="errorNama"></small>
+                </div>
+                <div class="form-group">
+                    <label for="hargaBarang">Harga Satuan</label>
+                    <input 
+                        type="number" 
+                        id="hargaBarang" 
+                        placeholder="Masukkan harga"
+                    >
+                    <small id="errorHarga"></small>
+                </div>
+                <div class="form-group">
+                    <label for="qtyBarang">Jumlah</label>
+                    <input 
+                        type="number" 
+                        id="qtyBarang" 
+                        placeholder="Masukkan jumlah"
+                    >
+                    <small id="errorQty"></small>
+                </div>
+                <button type="submit">
+                    Tambah ke Keranjang
+                </button>
+            </form>
+            <section class="cart-section">
+                <h2>Keranjang Belanja</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Barang</th>
+                            <th>Harga</th>
+                            <th>Qty</th>
+                            <th>Subtotal</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelKeranjang">
+                    </tbody>
+                </table>
+            </section>
+            <section class="summary-section">
+                <h2>Ringkasan Pembayaran</h2>
+                <div class="summary-item">
+                    <span>Total Belanja</span>
+                    <strong id="totalBelanja">Rp0</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Diskon</span>
+                    <strong id="diskon">Rp0</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Total Akhir</span>
+                    <strong id="totalAkhir">Rp0</strong>
+                </div>
+                <div class="payment-section">
+                    <div class="form-group">
+                        <label for="uangBayar">Uang Bayar</label>
+                        <input
+                            type="number"
+                            id="uangBayar"
+                            placeholder="Masukkan uang pembayaran"
+                        >
+                        <small id="errorBayar"></small>
+                    </div>
+                    <div class="summary-item">
+                        <span>Kembalian</span>
+                        <strong id="kembalian">Rp0</strong>
+                    </div>
+                    <button type="button" id="btnBayar">
+                        Hitung Pembayaran
+                    </button>
+                    <button type="button" id="btnTransaksiBaru">
+                        Transaksi Baru
+                    </button>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
