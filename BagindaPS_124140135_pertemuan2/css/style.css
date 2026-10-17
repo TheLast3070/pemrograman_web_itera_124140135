@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Times New Roman, serif;
+    color: crimson;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(
+        135deg,
+        rgb(45, 0, 0) 0%,
+        rgb(45, 0, 0) 50%,
+        black 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+h1, h2, h3 {
+    font-family: "Arial Black";
+    color: crimson;
+}
+h2 {
+    margin-top: 0;
+}
+
+/* HEADER DASHBOARD */
+
+.header-dashboard {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(20, 0, 0, 0.75);
+    border: 1px solid rgba(220, 20, 60, 0.2);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+.header-kiri {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+}
+.header-tengah {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    width: 100%;
+    text-align: center;
+}
+.header-tengah h1 {
+    color: crimson;
+    margin: 0 0 10px;
+}
+.header-tengah p {
+    color: white;
+    margin: 0;
+    line-height: 1.5;
+}
+.header-kanan {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 0;
+    width: 100%;
+}
+
+/* cuaca */
+
+.aplikasi-cuaca {
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.aplikasi-cuaca h2 {
+    color: crimson;
+    margin: 0 0 12px;
+}
+#info-cuaca {
+    background-color: rgb(20, 0, 0);
+    color: crimson;
+    padding: 15px;
+    border: 1px solid rgba(220, 20, 60, 0.35);
+    border-radius: 8px;
+    text-align: center;
+    margin: 0;
+    min-height: 156px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#info-cuaca h3 {
+    color: crimson;
+    font-size: 28px;
+    margin: 8px 0;
+}
+#info-cuaca p {
+    color: white;
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+/* jam digital */
+
+.aplikasi-jam {
+    width: 100%;
+    min-height: 180px;
+    background-color: rgb(20, 0, 0);
+    color: white;
+    padding: 20px 10px;
+    border: 1px solid rgba(220, 20, 60, 0.35);
+    border-radius: 8px;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.label-jam {
+    color: white;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 0 0 10px;
+}
+#jam-digital {
+    color: crimson;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+#tanggal-digital {
+    color: white;
+    font-size: 14px;
+    margin: 12px 0 0;
+}
+
+/* TUGAS DAN CATATAN */
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    align-items: start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.kolom-tugas, .kolom-catatan {
+    min-width: 0;
+}
+.kolom-tugas .tasks, .kolom-catatan .tasks {
+    background-color: rgba(20, 0, 0, 0.75);
+    border: 1px solid rgba(220, 20, 60, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.kolom-tugas h2, .kolom-catatan h2 {
+    color: crimson;
+    margin-bottom: 20px;
+}
+
+/* FORM TUGAS DAN CATATAN */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+label {
+    display: block;
+    margin-top: 2px;
+    color: crimson;
+}
+input,
+textarea {
+      background-color: rgba(20, 0, 0, 0.75);
+      border: 1px solid rgba(220, 20, 60, 0.2);
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: crimson;
+}
+textarea {
+    resize: vertical;
+}
+input:focus,
+textarea:focus {
+    outline: 2px solid crimson;
+    border-color: rgb(120, 0, 20);
+}
+
+/* TOMBOL */
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+button:hover {
+    background-color: rgb(120, 0, 20);
+}
+button:disabled {
+    background-color: rgb(35, 0, 0);
+    cursor: not-allowed;
+}
+
+/* KARTU TUGAS */
+
+.task-card {
+    background-color: rgba(20, 0, 0, 0.75);
+    border: 1px solid rgba(220, 20, 60, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 12px;
+}
+.task-card h3 {
+    color: crimson;
+    margin-top: 0;
+}
+.task-card p {
+    color: crimson;
+    overflow-wrap: anywhere;
+}
+.task-card button {
+    margin-top: 8px;
+}
+.peringatan {
+    color: #b91c1c;
+    font-size: 13px;
+}
+
+/* KARTU CATATAN */
+
+#daftar-catatan {
+    margin-top: 15px;
+}
+.catatan-card {
+    background-color: rgba(20, 0, 0, 0.75);
+    border: 1px solid rgba(220, 20, 60, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 12px;
+}
+.catatan-card h3 {
+    color: crimson;
+    margin-top: 0;
+}
+.isi-catatan {
+    color: crimson;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+.catatan-card button {
+    margin-top: 8px;
+}

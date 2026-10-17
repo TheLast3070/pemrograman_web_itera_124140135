@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Disuruh buat Personal Dashboard pertemuan 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header-dashboard">
+        <div class="header-kiri">
+            <section class="aplikasi-cuaca">
+                <div id="info-cuaca">
+                    <p>Memuat informasi cuaca ITERA...</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="header-tengah">
+            <h1>Dashboard Baginda P.S.</h1>
+            <p>Dashboard Orang Ganteng</p>
+        </div>
+
+        <div class="header-kanan">
+            <section class="aplikasi-jam">
+                <p class="label-jam">JAM DIGITAL</p>
+                <h2 id="jam-digital">00:00:00</h2>
+                <p id="tanggal-digital"></p>
+            </section>
+        </div>
+    </header>
+    <main id="dashboard" class="dashboard-layout">
+        <div class="kolom-tugas">
+            <section class="tasks">
+                <h2>Tambah Tugas Kuliah</h2>
+
+                <form id="form-tugas">
+                    <label for="nama">Nama Tugas</label>
+                    <input type="text" id="nama" required>
+
+                    <label for="mataKuliah">Mata Kuliah</label>
+                    <input type="text" id="mataKuliah" required>
+
+                    <label for="deadline">Deadline</label>
+                    <input type="date" id="deadline" required>
+
+                    <button type="submit">Tambah Tugas</button>
+                </form>
+            </section>
+
+            <section class="tasks">
+                <h2>Daftar Tugas Kuliah</h2>
+                <div id="daftar-tugas"></div>
+            </section>
+        </div>
+
+        <div class="kolom-catatan">
+            <section class="tasks" id="aplikasi-catatan">
+                <h2>Catatan Saya</h2>
+
+                <form id="form-catatan">
+                    <label for="judul-catatan">Judul Catatan</label>
+                    <input
+                        type="text"
+                        id="judul-catatan"
+                        placeholder="Judul catatan"
+                        required
+                    >
+
+                    <label for="isi-catatan">Isi Catatan</label>
+                    <textarea
+                        id="isi-catatan"
+                        rows="5"
+                        placeholder="Tulis catatan di sini..."
+                        required
+                    ></textarea>
+
+                    <button type="submit" id="tombol-simpan-catatan">
+                        Simpan Catatan
+                    </button>
+                </form>
+
+                <div id="daftar-catatan"></div>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
