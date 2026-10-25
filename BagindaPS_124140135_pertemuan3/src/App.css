@@ -1,0 +1,235 @@
+
+/* Pengaturan dasar */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Times New Roman", Times, serif;
+  color: #f5f5f5;
+  background: #101010;
+}
+
+body {
+  margin: 0;
+  background: #101010;
+  color: #f5f5f5;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+/* Header */
+.app-header {
+  background: #181818;
+  border-bottom: 1px solid #383838;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+}
+
+.header-content {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: #d71920;
+  color: white;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.brand p {
+  margin: 2px 0 0;
+  color: #b5b5b5;
+  font-size: 14px;
+}
+
+/* Navigasi */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navigation a {
+  padding: 7px 11px;
+  border-radius: 5px;
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.navigation a:hover {
+  background: #351719;
+  color: #ff666b;
+}
+
+.navigation a[aria-current="page"] {
+  background: #d71920;
+  color: #ffffff;
+}
+
+/* Area utama */
+.container {
+  width: calc(100% - 32px);
+  max-width: 760px;
+  margin: 0 auto 30px;
+}
+
+.form-section,
+.list-section {
+  padding: 18px;
+  background: #1b1b1b;
+  border: 1px solid #353535;
+  border-radius: 8px;
+}
+
+.form-section h2,
+.list-section h2 {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+/* Formulir */
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-group input,
+.filter-container input,
+.filter-container select {
+  width: 100%;
+  min-height: 36px;
+  padding: 6px 9px;
+  border: 1px solid #494949;
+  border-radius: 5px;
+  outline: none;
+  background: #111111;
+  color: #ffffff;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.form-group input:focus,
+.filter-container input:focus,
+.filter-container select:focus {
+  border-color: #e3262e;
+}
+
+.form-group input::placeholder,
+.filter-container input::placeholder {
+  color: #999999;
+}
+
+/* Tombol */
+.form-section button,
+.book-list button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #d71920;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-section button:hover,
+.book-list button:hover {
+  background: #f02b33;
+}
+
+.form-section form > a {
+  color: #ff6268;
+  text-align: center;
+  text-decoration: none;
+}
+
+.form-section form > a:hover {
+  text-decoration: underline;
+}
+
+/* Pencarian dan filter */
+.filter-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.book-list {
+  display: grid;
+  gap: 10px;
+}
+
+/* Tampilan layar kecil */
+@media (max-width: 600px) {
+  .app-header {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .header-content {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navigation {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .form-section,
+  .list-section {
+    padding: 14px;
+  }
+
+  .filter-container {
+    grid-template-columns: 1fr;
+  }
+}
