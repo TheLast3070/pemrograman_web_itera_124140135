@@ -17,11 +17,14 @@ function TambahBuku() {
   const [tahun, setTahun] = useState(
     bukuEdit ? String(bukuEdit.tahun) : ''
   )
+  const [status, setStatus] = useState(
+    bukuEdit?.status || 'Milik Saya'
+  )
 
   function handleSubmit(event) {
     event.preventDefault()
 
-    if (!judul.trim() || !penulis.trim() || !tahun) {
+    if (!judul.trim() || !penulis.trim() || !tahun || !status) {
       alert('Semua kolom harus diisi!')
       return
     }
@@ -30,6 +33,7 @@ function TambahBuku() {
       judul: judul.trim(),
       penulis: penulis.trim(),
       tahun: Number(tahun),
+      status,
     }
 
     if (id && bukuEdit) {
@@ -92,6 +96,20 @@ function TambahBuku() {
               max={new Date().getFullYear()}
               required
             />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="status">Status Buku</label>
+            <select
+              id="status"
+              value={status}
+              onChange={(event) => setStatus(event.target.value)}
+              required
+            >
+              <option value="Milik Saya">Milik Saya</option>
+              <option value="Sedang Dibaca">Sedang Dibaca</option>
+              <option value="Ingin Dibeli">Ingin Dibeli</option>
+            </select>
           </div>
 
           <button type="submit">
